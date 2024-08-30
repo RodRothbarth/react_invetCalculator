@@ -7,17 +7,21 @@ export function InputForm({ onChange, formInfo }) {
           <input
             type="number"
             required
-            value={formInfo.inicial}
-            onChange={(event) => onChange("inicial", event.target.value)}
+            value={formInfo.initialInvestment}
+            onChange={(event) =>
+              onChange("initialInvestment", event.target.value)
+            }
           />
         </p>
         <p>
           <label htmlFor="">Annual Investment</label>
           <input
             type="number"
-            value={formInfo.annual}
+            value={formInfo.annualInvestment}
             required
-            onChange={(event) => onChange("annual", event.target.value)}
+            onChange={(event) =>
+              onChange("annualInvestment", event.target.value)
+            }
           />
         </p>
       </div>
@@ -27,8 +31,8 @@ export function InputForm({ onChange, formInfo }) {
           <input
             type="number"
             required
-            value={formInfo.expected}
-            onChange={(event) => onChange("expected", event.target.value)}
+            value={formInfo.expectedReturn}
+            onChange={(event) => onChange("expectedReturn", event.target.value)}
           />
         </p>
         <p>

@@ -5,15 +5,15 @@ import { useState } from "react";
 
 function App() {
   const [formInfo, setFormInfo] = useState({
-    inicial: 0,
-    annual: 0,
-    expected: 0,
-    duration: 0,
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
   });
 
   function handleChange(inputId, newValue) {
     setFormInfo((prevInput) => {
-      return { ...prevInput, [inputId]: newValue };
+      return { ...prevInput, [inputId]: +newValue };
     });
   }
   return (
