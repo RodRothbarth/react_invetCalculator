@@ -5,11 +5,18 @@ import { useState } from "react";
 
 function App() {
   const [formInfo, setFormInfo] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
+    initialInvestment: 0,
+    annualInvestment: 0,
+    expectedReturn: 0,
+    duration: 0,
   });
+
+  const validInput =
+    formInfo.duration > 0 ? (
+      <Results formInfo={formInfo} />
+    ) : (
+      <p className="center">Please Insert duration grewater than ZERO</p>
+    );
 
   function handleChange(inputId, newValue) {
     setFormInfo((prevInput) => {
@@ -20,7 +27,7 @@ function App() {
     <>
       <Header />
       <InputForm onChange={handleChange} formInfo={formInfo} />
-      <Results formInfo={formInfo} />
+      {validInput}
     </>
   );
 }
